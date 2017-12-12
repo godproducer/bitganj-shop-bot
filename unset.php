@@ -8,9 +8,12 @@
 // Load composer
 require_once __DIR__ . '/vendor/autoload.php';
 
-// Add you bot's API key and name
-$bot_api_key  = 'your:bot_api_key';
-$bot_username = 'username_bot';
+require('../lib/core.inc');	
+$core = new \BtcRelax\Core();
+$core->init(false); 
+$bot_api_key  = BOT_TOKEN;
+//$bot_api_key  = '568417237:AAHDo_ylAMZcdq1zZ6rLHkqxshew7EACnsU';
+$bot_username = 'FastFenShopBot';
 
 try {
     // Create Telegram API object

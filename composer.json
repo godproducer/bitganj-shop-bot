@@ -11,9 +11,8 @@
     },
     "authors": [
         {
-            "name": "PHP Telegram Bot Team",
-            "homepage": "https://github.com/php-telegram-bot/example-bot/graphs/contributors",
-            "role": "Developer"
+            "name": "god",
+            "email": "god@btcrelax.xyz"
         }
     ],
     "require": {

@@ -41,25 +41,25 @@ class NewchatmembersCommand extends SystemCommand
      */
     public function execute()
     {
-        $message = $this->getMessage();
-
-        $chat_id = $message->getChat()->getId();
-        $members = $message->getNewChatMembers();
-
-        $text = 'Hi there!';
-
-        if (!$message->botAddedInChat()) {
-            $member_names = [];
-            foreach ($members as $member) {
-                $member_names[] = $member->tryMention();
-            }
-            $text = 'Hi ' . implode(', ', $member_names) . '!';
-        }
-
-        $data = [
-            'chat_id' => $chat_id,
-            'text'    => $text,
-        ];
+//        $message = $this->getMessage();
+//
+//        $chat_id = $message->getChat()->getId();
+//        $members = $message->getNewChatMembers();
+//
+//        $text = 'Привет!';
+//
+//        if (!$message->botAddedInChat()) {
+//            $member_names = [];
+//            foreach ($members as $member) {
+//                $member_names[] = $member->tryMention();
+//            }
+//            $text = 'Привет ' . implode(', ', $member_names) . '!';
+//        }
+//
+//        $data = [
+//            'chat_id' => $chat_id,
+//            'text'    => $text,
+//        ];
 
         return Request::sendMessage($data);
     }

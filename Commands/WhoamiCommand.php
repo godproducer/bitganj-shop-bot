@@ -48,7 +48,7 @@ class WhoamiCommand extends UserCommand
     /**
      * @var bool
      */
-    protected $private_only = true;
+    protected $private_only = false;
 
     /**
      * Command execute method
@@ -77,8 +77,8 @@ class WhoamiCommand extends UserCommand
         ]);
 
         $caption = sprintf(
-            'Your Id: %d' . PHP_EOL .
-            'Name: %s %s' . PHP_EOL .
+            'Твой Id: %d' . PHP_EOL .
+            'Имя: %s %s' . PHP_EOL .
             'Username: %s',
             $user_id,
             $from->getFirstName(),

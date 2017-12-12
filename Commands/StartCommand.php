@@ -62,7 +62,7 @@ class StartCommand extends SystemCommand
             'chat_id' => $chat_id,
             'text'    => $text,
         ];
-
+        \Longman\TelegramBot\TelegramLog::debug(\sprintf('Chat id:%s got answer.',$chat_id));
         return Request::sendMessage($data);
     }
 }

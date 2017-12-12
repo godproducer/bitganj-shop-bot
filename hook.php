@@ -11,27 +11,31 @@
 // Load composer
 require_once __DIR__ . '/vendor/autoload.php';
 
-// Add you bot's API key and name
-$bot_api_key  = 'your:bot_api_key';
-$bot_username = 'username_bot';
+require('../lib/core.inc');	
+$core = new \BtcRelax\Core();
+//$core->init(false); 
+//$bot_api_key  = BOT_TOKEN;
+$bot_api_key  = '586426691:AAFCVpTFdnByIWFXyAGGr-FJZa0WAv0hDlU';
+//$bot_api_key  = '568417237:AAHDo_ylAMZcdq1zZ6rLHkqxshew7EACnsU';
+$bot_username = 'FastFenShopBot';
 
 // Define all IDs of admin users in this array (leave as empty array if not used)
 $admin_users = [
-//    123,
+    540432553,479705837,
 ];
 
 // Define all paths for your custom commands in this array (leave as empty array if not used)
 $commands_paths = [
-//    __DIR__ . '/Commands/',
+    __DIR__ . '/Commands/',
 ];
 
 // Enter your MySQL database credentials
-//$mysql_credentials = [
-//    'host'     => 'localhost',
-//    'user'     => 'dbuser',
-//    'password' => 'dbpass',
-//    'database' => 'dbname',
-//];
+$mysql_credentials = [
+    'host'     => 'localhost',
+    'user'     => 'fastksjq_admin',
+    'password' => 'qX!ycUlsi4+l',
+    'database' => 'fastksjq_bot',
+];
 
 try {
     // Create Telegram API object
@@ -44,19 +48,19 @@ try {
     $telegram->enableAdmins($admin_users);
 
     // Enable MySQL
-    //$telegram->enableMySql($mysql_credentials);
+    $telegram->enableMySql($mysql_credentials);
 
     // Logging (Error, Debug and Raw Updates)
-    //Longman\TelegramBot\TelegramLog::initErrorLog(__DIR__ . "/{$bot_username}_error.log");
-    //Longman\TelegramBot\TelegramLog::initDebugLog(__DIR__ . "/{$bot_username}_debug.log");
-    //Longman\TelegramBot\TelegramLog::initUpdateLog(__DIR__ . "/{$bot_username}_update.log");
+    Longman\TelegramBot\TelegramLog::initErrorLog(__DIR__ . "/{$bot_username}_error.log");
+    Longman\TelegramBot\TelegramLog::initDebugLog(__DIR__ . "/{$bot_username}_debug.log");
+    Longman\TelegramBot\TelegramLog::initUpdateLog(__DIR__ . "/{$bot_username}_update.log");
 
     // If you are using a custom Monolog instance for logging, use this instead of the above
     //Longman\TelegramBot\TelegramLog::initialize($your_external_monolog_instance);
 
     // Set custom Upload and Download paths
-    //$telegram->setDownloadPath(__DIR__ . '/Download');
-    //$telegram->setUploadPath(__DIR__ . '/Upload');
+    $telegram->setDownloadPath(__DIR__ . '/Download');
+    $telegram->setUploadPath(__DIR__ . '/Upload');
 
     // Here you can set some command specific parameters
     // e.g. Google geocode/timezone api key for /date command

@@ -81,8 +81,8 @@ class KeyboardCommand extends UserCommand
 
         //Example 4 (bots version 2.0)
         $keyboards[] = new Keyboard([
-            ['text' => 'Send my contact', 'request_contact' => true],
-            ['text' => 'Send my location', 'request_location' => true],
+            ['text' => 'Накуриться'],
+            ['text' => 'Обшмыгаться','url'=>'http://bitganj.website'],
         ]);
 
         //Return a random keyboard.
@@ -94,7 +94,7 @@ class KeyboardCommand extends UserCommand
         $chat_id = $this->getMessage()->getChat()->getId();
         $data    = [
             'chat_id'      => $chat_id,
-            'text'         => 'Press a Button:',
+            'text'         => 'Братиш, определись:',
             'reply_markup' => $keyboard,
         ];
 
